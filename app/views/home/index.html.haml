@@ -1,6 +1,41 @@
-%h1 Welcome to the wildest window to the web.
-%p We have no content woohooooooo. 
-%p josh is the best PL he brought us bagels. BAGELS!!.
-%p If seagulls fly over the sea, what flies over the bay?
-%p BAGELS.
+%div#landing-carousel.carousel.slide
+  %ol.carousel-indicators
+    %li.active{"data-target"=>"#landing-carousel", "data-slide-to"=>"0"}
+    %li{"data-target"=>"#landing-carousel", "data-slide-to"=>"1"}
+    %li{"data-target"=>"#landing-carousel", "data-slide-to"=>"2"}
+  %div.carousel-inner
+    %div.active.item
+      %img(src="/assets/carousel/carousel1.jpg")
+      %div.carousel-caption
+        %h4 Hallo
+        %p Check out this project. It is a success
+    %div.item
+      %img(src="/assets/carousel/carousel2.jpg")
+      %div.carousel-caption
+        %h4 Mmm...floor 
+        %p Finish project. Sleep on floor.
+
+    %div.item
+      %img(src="/assets/carousel/carousel3.jpg")
+      %div.carousel-caption
+        %h4 Myspace, yourspace
+        %p etc etc
+  %a.carousel-control.left{:href => "#landing-carousel", "data-slide" => "prev"} &lsaquo;
+  %a.carousel-control.right{:href => "#landing-carousel", "data-slide" => "next"} &rsaquo;
+
+%div.hero-unit#landing-title
+  %h1 Welcome.
+  %p We have no content woohooooooo. 
+  %p josh is the best PL he brought us bagels. BAGELS!!.
+  %p If seagulls fly over the sea, what flies over the bay?
+  %p BAGELS.
+
+%div.row
+  %div.span7.well
+    %h3 Organizations
+    %p Raw denim next level meh, cray fap you probably haven't heard of them retro. Sriracha vinyl butcher ethical. Forage cosby sweater retro, banjo brooklyn marfa single-origin coffee truffaut umami farm-to-table intelligentsia cliche salvia authentic kale chips. Skateboard truffaut williamsburg intelligentsia, godard tumblr post-ironic mumblecore 3 wolf moon church-key selvage try-hard. Portland organic fashion axe, raw denim williamsburg mcsweeney's semiotics direct trade plaid DIY dreamcatcher lo-fi hashtag. Odd future 8-bit salvia pug irony. Art party marfa literally, pop-up umami iphone trust fund organic.
+  %div.span4.well
+    %h3 Volunteers
+    %p Skateboard pug YOLO fixie flannel, narwhal marfa kale chips deep v pop-up fanny pack selvage PBR echo park ennui. Raw denim vinyl thundercats neutra occupy umami, PBR lomo whatever mumblecore next level aesthetic organic wes anderson cardigan. Hoodie mcsweeney's pour-over pickled, keytar gastropub hella lomo brunch beard sartorial viral. Aesthetic fanny pack cliche american apparel, craft beer helvetica blue bottle photo booth artisan hella williamsburg keffiyeh PBR. Pinterest twee forage meggings, ennui try-hard american apparel literally sartorial DIY before they sold out pug. Fingerstache leggings dreamcatcher occupy. Farm-to-table art party occupy beard mumblecore put a bird on it PBR small batch.
+
 
