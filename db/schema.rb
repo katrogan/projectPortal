@@ -11,10 +11,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130425030132) do
+ActiveRecord::Schema.define(:version => 20130428174426) do
 
-  create_table "all_tags", :force => true do |t|
-    t.string   "tag"
+  create_table "comments", :force => true do |t|
+    t.integer  "commentable_id",   :default => 0
+    t.string   "commentable_type", :default => ""
+    t.string   "title",            :default => ""
+    t.text     "body",             :default => ""
+    t.string   "subject",          :default => ""
+    t.integer  "user_id",          :default => 0,  :null => false
+    t.integer  "parent_id"
+    t.integer  "lft"
+    t.integer  "rgt"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  add_index "comments", ["commentable_id", "commentable_type"], :name => "index_comments_on_commentable_id_and_commentable_type"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
+  create_table "favorites", :force => true do |t|
+    t.integer  "project_id"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -55,19 +73,17 @@ ActiveRecord::Schema.define(:version => 20130425030132) do
     t.integer  "state"
   end
 
+  create_table "projects_users", :id => false, :force => true do |t|
+    t.integer "project_id", :null => false
+    t.integer "user_id",    :null => false
+  end
+
   create_table "questions", :force => true do |t|
     t.string   "question"
     t.string   "input_type"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "deleted"
-  end
-
-  create_table "tags", :force => true do |t|
-    t.string   "label"
-    t.integer  "issue_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

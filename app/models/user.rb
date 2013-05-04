@@ -9,5 +9,9 @@ class User < ActiveRecord::Base
   attr_accessible :fname, :lname, :email, :password, :password_confirmation, :remember_me, :admin
   # attr_accessible :title, :body
 
+  validates :fname, :lname, :email, :password, :presence => true
+  
   has_many :projects, :dependent => :destroy
+  has_many :favorites, :dependent => :destroy
+  has_many :favorite_projects, :through => :favorites, :source => :project
 end
